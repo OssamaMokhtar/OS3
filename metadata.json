@@ -1,0 +1,7 @@
+{
+  "name": "CareerOracle Intelligence",
+  "description": "A personalized career intelligence platform integrating cognitive assessment, CV analysis, and real-time market insights powered by Gemini AI.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
