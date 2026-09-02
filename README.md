@@ -1,20 +1,35 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# OS3 — AI-assisted note taking
 
-# Run and deploy your AI Studio app
+A lightweight note-taking app with Google Gemini wired in, built to test a specific idea: that the useful AI feature in a notes app isn't generation, it's **retrieval of what you already wrote and forgot**.
 
-This contains everything you need to run your app locally.
+`TypeScript` · `React` · `Vite` · `Google Gemini API`
 
-View your app in AI Studio: https://ai.studio/apps/drive/1JLIuR9yTAMsb14540_r4Yc23tz_2DaLa
+---
 
-## Run Locally
+## Why I built it
 
-**Prerequisites:**  Node.js
+Most AI note apps optimise for producing more text. That's the wrong end of the problem — the failure mode in personal notes isn't a blank page, it's that six months of notes become write-only storage you never search again.
 
+OS3 is a small prototype for the opposite behaviour: capture stays fast and plain, and the model's job is surfacing relevance across existing notes.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Running it locally
+
+**Prerequisites:** Node.js 18+
+
+```bash
+npm install
+cp .env.local.example .env.local   # add your GEMINI_API_KEY
+npm run dev
+```
+
+Set `GEMINI_API_KEY` in `.env.local` to a key from [Google AI Studio](https://aistudio.google.com/apikey).
+
+## Status
+
+Working prototype. Scaffolded with Google AI Studio, then modified.
+
+**What I'd do next:** local embeddings so retrieval works offline and notes never leave the device — the current version sends context to the API, which is the wrong tradeoff for personal notes.
+
+## License
+
+MIT
