@@ -33,12 +33,26 @@ cp .env.local.example .env.local    # add your GEMINI_API_KEY
 npm run dev
 ```
 
+## Architecture
+
+Gemini runs **server-side only**. The browser calls `/api/analyze-resume` and `/api/market-insights`; the key never reaches the client, and a build-time check asserts it cannot appear in the bundle.
+
+Those routes deploy as Vercel serverless functions (`api/`) and share one implementation with the local dev server (`server.ts`) via `api/_lib/gemini.ts`, so there is a single source of truth per call.
+
+## Deploying
+
+```bash
+vercel                                    # link the project
+vercel env add GEMINI_API_KEY production  # server-side only, never exposed
+vercel --prod
+```
+
 ## Status
 
-Working prototype. Dashboard, navigation, and profile visualisation are functional against seeded state; assessment scoring and market data are wired to Gemini and require an API key.
+Working prototype. Dashboard, navigation, and profile visualisation are functional against seeded state; resume parsing and market insights call Gemini and need a key.
 
 **Known issues**
-- Tailwind is loaded from the play CDN (`cdn.tailwindcss.com`), which warns against production use. Move to the PostCSS plugin before deploying.
+- Tailwind is loaded from the play CDN (`cdn.tailwindcss.com`), which warns against production use. Move to the PostCSS plugin before serious traffic.
 - No test coverage yet.
 
 ## A note on the repository name
