@@ -1,5 +1,5 @@
-import type { ApiRequest, ApiResponse } from "./_lib/http";
-import { analyzeResumeImage, MAX_IMAGE_BYTES } from "./_lib/gemini";
+import type { ApiRequest, ApiResponse } from "./_lib/http.js";
+import { analyzeResumeImage, MAX_IMAGE_BYTES } from "./_lib/gemini.js";
 
 export const config = { api: { bodyParser: { sizeLimit: "6mb" } } };
 

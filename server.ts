@@ -7,7 +7,7 @@
  */
 import express from "express";
 import { createServer as createViteServer } from "vite";
-import { analyzeResumeImage, getMarketInsights, MAX_IMAGE_BYTES } from "./api/_lib/gemini";
+import { analyzeResumeImage, getMarketInsights, MAX_IMAGE_BYTES } from "./api/_lib/gemini.js";
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
