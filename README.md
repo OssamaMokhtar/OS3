@@ -4,6 +4,8 @@
 
 `TypeScript` · `React` · `Vite` · `Recharts` · `Gemini`
 
+**[Try it live →](https://os-3-ossamamokhtars-projects.vercel.app)**
+
 ![CareerOracle dashboard](docs/screenshot.png)
 
 ---
